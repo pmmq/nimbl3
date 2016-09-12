@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+android {
+    compileSdkVersion 24
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "interview.pub.com.nimbl3"
+        minSdkVersion 14
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+
+        debug {
+            // staging server
+            buildConfigField "String", "SERVER_URL", '"https://www-staging.usay.co/"'
+        }
+
+        release {
+            // change server url to production server
+            buildConfigField "String", "SERVER_URL", '"https://www-staging.usay.co/"'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.0.0'
+
+    // dagger2
+    apt 'com.google.dagger:dagger-compiler:2.5'
+    compile 'com.google.dagger:dagger:2.5'
+    provided 'javax.annotation:jsr250-api:1.0'
+
+    // retorfit
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+
+    // okhttp interceptor logger
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+
+    // picasso
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+    // timber logger
+    compile 'com.jakewharton.timber:timber:4.3.0'
+
+    // butter knife
+    compile 'com.jakewharton:butterknife:8.4.0'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+
+}
