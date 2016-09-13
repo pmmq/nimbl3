@@ -13,6 +13,7 @@ public interface MainContract {
     interface View {
         void bindUI(List<Survey> surveyData);
         void addMore(List<Survey> surveysData);
+        void updateProgress(boolean isShowing);
     }
 
     interface Presenter {

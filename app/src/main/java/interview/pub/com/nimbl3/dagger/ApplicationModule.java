@@ -77,5 +77,4 @@ public class ApplicationModule {
     User provideUser(){
         return new User("6eebeac3dd1dc9c97a06985b6480471211a777b39aa4d0e03747ce6acc4a3369");
     }
-
 }

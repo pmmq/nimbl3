@@ -27,17 +27,20 @@ public class MainPresenter extends BasePresenter implements MainContract.Present
 
     @Override
     public void fetchAllData() {
+        mView.updateProgress(true);
         Call<List<Survey>> call = mService.getSurvey(mUser.AccessToken);
         call.enqueue(new Callback<List<Survey>>() {
             @Override
             public void onResponse(Call<List<Survey>> call, Response<List<Survey>> response) {
                 if(response!=null){
                     mView.bindUI(response.body());
+                    mView.updateProgress(false);
                 }
             }
 
             @Override
             public void onFailure(Call<List<Survey>> call, Throwable t) {
+                mView.updateProgress(false);
                 t.printStackTrace();
             }
         });
@@ -60,4 +63,6 @@ public class MainPresenter extends BasePresenter implements MainContract.Present
             }
         });
     }
+
+
 }

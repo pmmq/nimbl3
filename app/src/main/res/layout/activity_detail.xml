@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_survey"
+        android:src="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/tv_detail_activity"
+        android:paddingTop="50dp"
+        android:text="Detail Activity"
+        android:textSize="36dp"
+        android:textColor="@color/colorWhite"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:layout_below="@+id/tv_detail_activity"
+        android:paddingTop="50dp"
+        tools:text="Name"
+        android:textSize="36dp"
+        android:textColor="@color/colorWhite"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_name"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        tools:text="description"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:textColor="@color/colorWhite"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_name"
+        android:id="@+id/tv_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
