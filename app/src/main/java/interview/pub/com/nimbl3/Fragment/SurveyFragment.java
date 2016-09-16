@@ -32,13 +32,13 @@ public class SurveyFragment extends Fragment implements View.OnClickListener {
     @BindView(R.id.tv_name)
     TextView tvName;
 
-    public static String SURVEY_BUNDLE_KEY = "SURVEY_BUNDLE_KEY";
+    public static String BUNDLE_SURVEY_KEY = "BUNDLE_SURVEY_KEY";
 
     private Survey mSurvey;
     public static SurveyFragment getInstance(Survey survey){
         SurveyFragment fragment = new SurveyFragment();
         Bundle bundle = new Bundle();
-        bundle.putParcelable(SURVEY_BUNDLE_KEY,survey);
+        bundle.putParcelable(BUNDLE_SURVEY_KEY,survey);
         fragment.setArguments(bundle);
         return fragment;
     }
@@ -48,9 +48,9 @@ public class SurveyFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_survey,container,false);
         if(savedInstanceState==null){
-            mSurvey = getArguments().getParcelable(SURVEY_BUNDLE_KEY);
+            mSurvey = getArguments().getParcelable(BUNDLE_SURVEY_KEY);
         }else {
-            mSurvey = savedInstanceState.getParcelable(SURVEY_BUNDLE_KEY);
+            mSurvey = savedInstanceState.getParcelable(BUNDLE_SURVEY_KEY);
         }
         ButterKnife.bind(this,rootView);
         initView();
@@ -76,7 +76,7 @@ public class SurveyFragment extends Fragment implements View.OnClickListener {
         switch (view.getId()){
             case R.id.btn_take_survey :
                 Intent intent = DetailActivity.getIntent(getContext());
-                intent.putExtra(SURVEY_BUNDLE_KEY,getArguments().getParcelable(SURVEY_BUNDLE_KEY));
+                intent.putExtra(BUNDLE_SURVEY_KEY,getArguments().getParcelable(BUNDLE_SURVEY_KEY));
                 startActivity(intent);
                 break;
         }
@@ -87,6 +87,6 @@ public class SurveyFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putParcelable(SURVEY_BUNDLE_KEY,mSurvey);
+        outState.putParcelable(BUNDLE_SURVEY_KEY,mSurvey);
     }
 }

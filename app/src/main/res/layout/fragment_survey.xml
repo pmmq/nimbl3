@@ -12,21 +12,18 @@
         android:layout_height="match_parent" />
 
     <TextView
-        android:paddingTop="80dp"
         tools:text="Name"
-        android:textSize="36dp"
+        style="@style/AppTheme.Text.Header"
+        android:paddingTop="80dp"
         android:textColor="@color/colorWhite"
         android:layout_centerHorizontal="true"
         android:id="@+id/tv_name"
-        android:textStyle="bold"
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <TextView
         tools:text="description"
-        android:textSize="25dp"
-        android:gravity="center"
+        style="@style/AppTheme.Text.Body"
         android:textColor="@color/colorWhite"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/tv_name"

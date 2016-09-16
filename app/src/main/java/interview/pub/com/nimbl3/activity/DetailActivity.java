@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -36,7 +35,7 @@ public class DetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
-        mSurvey = getIntent().getExtras().getParcelable(SurveyFragment.SURVEY_BUNDLE_KEY);
+        mSurvey = getIntent().getExtras().getParcelable(SurveyFragment.BUNDLE_SURVEY_KEY);
         initView();
     }
 
